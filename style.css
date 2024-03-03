@@ -119,7 +119,7 @@ main{
 }
 main .container{
     display: grid;
-    grid-template-columns: 30vh auto 20vw ;
+    grid-template-columns: 37vh auto 20vw ;
     column-gap: 2rem;
     position: relative;
 } 
@@ -140,10 +140,10 @@ main .container .left .profile{
 }
 /*=======================SIDE BAR================*/
 .left .sidebar{
-    margin: 1rem;
+    margin: 1rem 0;
     background: var(--color-white);
     border-radius: var(--card-border-radius);
-       
+    width: 100%;
 }
 .left .sidebar .menu-item{
      display: flex; 
@@ -152,6 +152,7 @@ main .container .left .profile{
      cursor: pointer;
      transition: all 300ms ease;
      position: relative;
+     width: 100%;
 }
 .left .sidebar .menu-item:hover{
     background-color: var(--color-light);
@@ -186,27 +187,29 @@ main .container .left .profile{
      color: var(--color-primary);
 }
 
-.left .search-bar .active::before{
+.left .sidebar .active::before{
     content: "";
     display: block;
     width: 0.5rem;
     height: 100%;
     position: absolute;
+    background-color: var(--color-primary);
 }
-.left.sidebar .menu-item:first-child.active{
-       border-top-left-radius: var(--card-border-radius);
+.left .sidebar .menu-item:first-child.active::before{
+    border-top-left-radius: var(--card-border-radius);
        overflow: hidden;
 }
-.left.sidebar .menu-item:last-child.active{
-    border-top-left-radius: var(--card-border-radius);
+.left .sidebar .menu-item:last-child.active::before{
+    border-bottom-left-radius: var(--card-border-radius);
     overflow: hidden;
 }
 
-.left .btn{
+.left .btn .btn-primary {
     margin-top: 1rem;
     width: 100%;
     text-align: center;
-    padding: 1rem 0;
+    padding: 3rem;
+    margin-left: 7rem;
 }
 /***************************************NOTIFICATION POP UP**********************************************/
 .left .notification-popup{
@@ -219,7 +222,7 @@ main .container .left .profile{
     padding: var(--card-padding);
     box-shadow:0 0 2rem hsl( var(--color-primary),75%,60% 25% ) ;
     z-index: 8;
-
+    display: none;
 }
 .left .notification-popup ::before{
     content: "";
@@ -230,4 +233,103 @@ main .container .left .profile{
     position: absolute;
     left: -0.6rem;
     transform: rotate(45deg);
+}
+.left .notification-popup >div{
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.left  .notification-popup small{
+    display: block;
+}
+/*******************MIDDLE***********************/
+.middle .stories{
+    display: flex;
+    justify-content: space-between;
+    height: 12rem;
+    gap: 0.5rem;
+}
+.middle .stories .story{
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 0.75rem;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.middle .stories .story::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5rem;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(transparent,rgba(0,0,0,0.75));
+}
+.middle .stories .story name{
+    z-index: 2;
+}
+.middle .stories .story:nth-child(1){
+    background: url('images/image2.jpg')
+    no-repeat center  center/cover;
+}
+.middle .stories .story:nth-child(2){
+    background: url('images/image2.jpg')
+    no-repeat center  center/cover;
+}
+.middle .stories .story:nth-child(3){
+    background: url('images/image2.jpg')
+    no-repeat center  center/cover;
+}
+.middle .stories .story:nth-child(4){
+    background: url('images/image2.jpg')
+    no-repeat center  center/cover;
+}
+.middle .stories .story:nth-child(5){
+    background: url('images/image2.jpg')
+    no-repeat center  center/cover;
+}
+.middle .stories .story:nth-child(6){
+    background: url('images/image2.jpg')
+    no-repeat center  center/cover;
+}
+.middle .story .profile-picture{
+    width: 2rem;
+    height: 2rem;
+    align-self: start;
+    border: 3px solid var(--color-primary);
+}
+/********************************CREATE POST*****************/
+.middle .create-post{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    background: var(--color-white);
+    padding: 0.4rem var(--card-padding);
+    border-radius:var(--border-radius) ;
+}
+.middle .create-post input[type='text']{
+    justify-self: start;
+    width: 100%;
+    padding-left: 1rem;
+    background: transparent;
+    color: var(--color-dark);
+    margin-right: 1rem; 
+} 
+/**********************FEEDS*********************************/
+.middle .feeds .feed{
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    margin: 1rem 0;
+    font-size:0.85rem ;
+    line-height: 1.;
 }
