@@ -1,11 +1,15 @@
   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root{
+    --bg-color-lightness:100%;
+    --color-primary-hue :252;
+    --color:#000;
+
     --color-dark: hsl(252,30%,17%);
-    --color-white: hsl(252,30%,100%);
+    --color-white: hsl(252,30%,var(--bg-color-lightness));
     --color-light: hsl(252,30%,95%);
     --color-gray: hsl(252,15%,65%);
-    --color-primary: hsl(152,73%,60%);
+    --color-primary: hsl(var(--color-primary-hue),73%,60%);
     --color-secondary: hsl(252,100%,90%);
     --color-success: hsl(120,95%,65%);
     --color-danger: hsl(0,95%,65%);
@@ -36,7 +40,11 @@
     color: var(--color-dark);
     background: var(--color-light);
     overflow: auto;
-
+    background-color: var(--color-white);
+    color: var(--color);
+}
+h{
+    color: var(--color-primary);
 }
 .container{
     width: 80%;
@@ -146,6 +154,9 @@ main .container .left .profile{
     width: 100%;
 }
 /*=======================SIDE BAR================*/
+.left{
+    z-index: 2;
+}
 .left .sidebar{
     margin: 1rem 0;
     background: var(--color-white);
@@ -194,7 +205,7 @@ main .container .left .profile{
      color: var(--color-primary);
 }
 
-.left .sidebar .active::before{
+.left .sidebar .menu-item.active::before{
     content: "";
     display: block;
     width: 0.5rem;
@@ -345,6 +356,9 @@ main .container .left .profile{
     display: flex;
     gap: 1rem;
 }
+.middle .feed.photo{
+    width: 100%;
+}
 .middle .feed .photo img{
     border-radius: var(--card-border-radius);
     overflow: hidden;
@@ -477,4 +491,205 @@ main .container .left .profile{
 .right .request .action{
     display: flex;
     gap: 1rem;
+}
+/* ==================================THEME CUSTOMISATION============================================ */
+.customise-theme{
+    display: none;
+    background: rgba(red, green, blue, 0.5);
+    width: 90vw;
+    height: 80vh;
+    position: fixed;
+    top: 0;
+    place-items: center;
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 5rem;
+    margin-left: 5rem;
+    z-index: 18;
+}
+.customise-theme .card{
+    background: var(--color-white);
+    padding: 3rem;
+    border-radius: var(--card-border-radius);
+    width: 50%;
+}
+/*=======================================================FONT COLOR==============================================*/
+.customise-theme .font-size{
+    margin-top: 1rem;
+}
+.customise-theme .font-size >div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-light);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+}
+.customise-theme .choose-size{
+    width: 100%;
+    height: 0.3ren;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.customise-theme .choose-size span{
+    width: 1rem;
+    height: 1rem;
+    background: var(--color-secondary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+.customise-theme .choose-size span.active{
+    background: var(--color-primary);
+}
+/*================================FONT SIZE===================================*/
+.customise-theme .color{
+    margin-top: 2rem;
+}
+.customise-theme .choose-color{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-light);
+    padding: var(--search-padding);
+    
+}
+.customise-theme .choose-color span{
+    width: 2.2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+.customise-theme .choose-color span:nth-child(1){
+    background: hsl(252, 75%,60%);
+}
+.customise-theme .choose-color span:nth-child(2){
+    background: hsl(52, 75%,60%);
+}
+.customise-theme .choose-color span:nth-child(3){
+    background: hsl(352, 75%,60%);
+}
+.customise-theme .choose-color span:nth-child(4){
+    background: hsl(152, 75%,60%);
+}
+.customise-theme .choose-color span:nth-child(5){
+    background: hsl(202, 75%,60%);
+}
+.customise-theme .choose-color span.active{
+    border: 5px solid white;
+}
+/*===========================BACKGROUND===================================*/
+.customise-theme .background{
+    margin-top: 2rem;
+    height: 50%;
+}
+.customise-theme .choose-bg{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+.customise-theme .choose-bg>div{
+    padding: var(--card-padding);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+.customise-theme .choose-bg>div.active{
+    border: 2px solid var(--color-primary);
+}
+.customise-theme .choose-bg .bg-1  {
+    background: white;
+    color: black;
+}
+.customise-theme .choose-bg .bg-2{
+    background: hsl(252,30%,17%);
+    color: white;
+}
+.customise-theme .choose-bg .bg-3{
+    background: hsl(252,30%,10%);
+    color: white;
+}
+.customise-theme .choose-bg>div span{
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--color-gray);
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+/*==================================================
+MEDIA QUERIES FOR BIG TABLETS
+============================================*/
+@media screen and (max-width:1200px) {
+   .container{
+    width: 96%;
+   }
+
+main .container{
+    grid-template-columns: 5rem auto 30vh;
+    gap: 1rem;
+}
+.left{
+    width: 5rem;
+   z-index: 5;
+}
+main .container .left .profile{
+    display: none;
+}
+.sidebar h3{
+    display: none ;
+}
+.left .btn{
+    display: none;
+}
+.customise-theme .card{
+    width: 97vw;
+}
+
+}
+/*==================================================
+MEDIA QUERIES FOR SMALL PHONES
+============================================*/
+@media screen and (max-width:992px) {
+    body{
+        width: 96%;
+    }
+    nav .search-bar{
+        display: none;
+    }
+
+main .container{
+    grid-template-columns: 3rem  auto 4rem;
+    gap: 0;
+}
+main .container .left{
+    grid-column: 3/4;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+/*====================NOTIFICATION POPUP==========================*/
+   .left .notification-popup{
+    position: absolute;
+    left: -20rem;
+    width: 20rem;
+   }
+   .left .notification-popup::before{
+    display : absolute;
+    top: 1.3 rem;
+    left:calc(20rem -0.6rem) ;
+    display: block;
+   }  
+   main .container .middle{
+    grid-column: 1/3
+   }
+   main .container .right{
+    display: none;
+   }
+   .customise-theme .card{
+    width: 92vw  ;
+   }
 }

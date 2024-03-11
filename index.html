@@ -15,9 +15,9 @@
 <body>
     <nav>
         <div class="container">
-            <h2 class="log">
+            <h1 class="log">
                 iBerry
-            </h2>
+            </h1>
             <div class="search-bar">
                 <i class="uil uil-search"></i>
                 <input type="search" placeholder="Search for creators,inspirations and projects">
@@ -30,6 +30,7 @@
             </div>
         </div>
     </nav>
+ 
     <!--------------------MAIN------------------------------->
     <main>
         <div class="container">
@@ -104,7 +105,7 @@
                         <!-------------------END NOTIFICATION POPUP----------------->
                     </a>
                     <a class="menu-item" id="messages">
-                        <span><i class="uil uil-envelope-alt"><small class="notification-count">16</small></i></span>
+                        <span><i class="uil uil-envelope-alt"><small class="message-notification-count notification-count">16</small></i></span>
                         <h3>Messages</h3>
                     </a>
                     <a class="menu-item">
@@ -115,9 +116,60 @@
                         <span><i class="uil uil-chart-line"></i></span>
                         <h3>Analytics</h3>
                     </a>
-                    <a class="menu-item">
+                    <a class="menu-item" id="theme">
                         <span><i class="uil uil-palette"></i></span>
                         <h3>Theme</h3>
+                        <div class="customise-theme">
+                            <div class="card">
+                                <h1>Customise your view</h1>
+                                <p>Manage your font size,color,and background</p>
+                                <!---------------------------------FONT SIZES------------------------------------>
+                            <div class="font-size">
+                                <h2>Font size</h2>
+                                <div>
+                                    <h6>Aa</h6>
+                                <div class="choose-size">
+                                    <span class="font-size-1"></span>
+                                    <span class="font-size-2 active"></span>
+                                    <span class="font-size-3"></span>
+                                    <span class="font-size-4"></span>
+                                    <span class="font-size-5" ></span>
+                                </div>  
+                                 <h3>Aa</h3>  
+                            </div>
+                            </div>
+                            
+                            <!----------------------------------------PRIMARY COLORS---------------------------------------->
+                            <div class="color">
+                                <h2>Color</h2>
+                                <div class="choose-color">
+                                    <span class="Color-1 active"></span>
+                                    <span class="Color-2"></span>
+                                    <span class="Color-3"></span>
+                                    <span class="Color-4"></span>
+                                    <span class="Color-5"></span>
+                                </div>
+                            </div>
+                            <!----------------------------------------------BACKGROUND COLORS------------------------------------------------>
+                            <div class="background">
+                                <h2>Background</h2>
+                                <div class="choose-bg">
+                                    <div class="bg-1">
+                                        <span></span>
+                                        <h5 for="bg-1" >Light</h5>
+                                    </div>
+                                    <div class="bg-2">
+                                        <span></span>
+                                        <h5 for="bg-2" >Dark</h5>
+                                    </div>
+                                    <div class="bg-3">
+                                        <span></span>
+                                        <h5 for="bg-3" >lights out</h5>
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
                     </a>
                     <a class="menu-item ">
                         <span><i class="uil uil-setting"></i></span>
@@ -349,7 +401,7 @@
                      <!------------------------SEARCH BAR---------------------------->
                      <div class="search-bar">
                         <i class="uil uil-search"></i>
-                        <input type="search" placeholder="Search messages" id="message-search ">
+                        <input type="search" placeholder="Search messages" id="message-search">
                      </div>
                      <!----------------------MESSAGES CATEGORT----------------------------->
                      <div class="category">
@@ -470,12 +522,12 @@
                     </div>
                 </div>
             </div>
-
+             <!------------------------------------END RIGHT--------------------------------------->
         </div>
-
+        
     </main>
-
-
+    
+<script src="index.js"></script>
 </body>
 
 </html>
